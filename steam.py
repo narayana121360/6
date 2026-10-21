@@ -324,7 +324,7 @@ class steam:
 
             exergy_input = heater_exergy['hot_change'] + pump_exergy['work']
             exergy_output = turbine_power
-            exergy_efficiency = 100 * exergy_output/exergy_input if exergy_input != 0 else 0
+            exergy_efficiency = 100 * net_power/exergy_input if exergy_input != 0 else 0
             self.exergy = dict(heater=heater_exergy, turbine=turbine_exergy, pump=pump_exergy, condenser=condenser_exergy)  # for the Sankey diagram in app.py
             return net_power, self.t1, self.p1, self.h1, hx_heater, self.t_flue_out, self.p_flue_out, net_efficiency, exergy_efficiency, turbine_cost, condenser_cost, pump_cost, heater_cost
 
