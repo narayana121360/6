@@ -957,8 +957,8 @@ class tco2:
 
         net_efficiency = 100 * net_power/self.hx_heater
 
-        exergy_input = self.heater_exergy['hot_change'] + self.pump_exergy['work']
-        exergy_output = self.turbine_power
+        exergy_input = self.heater_exergy['hot_change'] 
+        exergy_output = self.turbine_power - self.pump_exergy['work']
         exergy_efficiency = 100 * exergy_output/exergy_input
         self.m = mass_flowrate
         #print('t_flue_in = ', self.t_hot_in - 273.15, 't1 = ', self.t1-273.15, 'p1 = ', self.p1/100_000, 'h1 = ', self.h1, 'hx heater = ', self.hx_heater, 'm = ', mass_flowrate, 'net_power = ', net_power, 'self.turbine_power = ', self.turbine_power, 'Pump power = ', self.pump_exergy['work'])
