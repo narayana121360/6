@@ -1623,7 +1623,7 @@ class sco2:
         
 
         useful_work = (turbine_exergy['work'] - main_comp_exergy['work'] - bypass_comp_exergy['work']) + bt_exergy['cold_change']
-        exergy_efficiency = useful_work/heater_exergy
+        exergy_efficiency = self.net_power/heater_exergy
         
         total= (turbine_exergy['work'] - main_comp_exergy['work'] - bypass_comp_exergy['work']) +  bt_exergy['cold_change'] + bt_exergy['destroyed']
         #print('t_flue_in(C) = ', self.t_flue_in - 273.15, 't1 = ', self.t1-273.15, 'p1 = ', self.p1/100_000, 'hx heater = ', self.heat_input, 'm = ', mass_flowrate, 'net_power = ', self.net_power)
